@@ -1,0 +1,104 @@
+/* CSS Sześcian */
+
+* {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    background-color: rgb(114, 114, 114);
+    height: 60vh;
+}
+
+#perspektywa {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    perspective: 300px;
+    display: grid;
+    margin-top: 20%;
+}
+
+#rodzic {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: obrot 20s linear infinite;
+}
+
+#rodzic div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 15px; 
+    box-shadow: 0 0 4px rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.8);
+    /*background-image: radial-gradient(ellipse at center,rgba(255, 255, 255, 0.8),rgba(0,0,0,0.5));*/
+}
+
+#rodzic div p {
+    padding-top: 20px;
+    font-size: 10px;
+    text-align: center;
+    color: white;
+    padding: 10px;
+}
+
+#rodzic div h2 {
+    color: white;
+    font-size: 5px;
+    text-align: center;
+    line-height: 0;
+}
+
+#rodzic div h1 {
+    color: white;
+    text-align: center;
+}
+
+#przod {
+    transform: translateZ(150px);
+}
+
+#tyl {
+    transform: translateZ(-150px);
+}
+
+#lewo {
+    transform: rotateY(-90deg) translateZ(150px);
+}
+
+#prawo {
+    transform: rotateY(90deg) translateZ(150px);
+}
+
+#gora {
+    transform: rotateX(-90deg) translateZ(150px);
+}
+
+#dol {
+    transform: rotateX(90deg) translateZ(150px);
+}
+
+@keyframes obrot
+{
+    0% { transform: rotateX(0) rotateZ(0); }
+    100% { transform: rotateX(360deg) rotateZ(360deg); }
+}
+
+#rodzic:hover {
+    animation-play-state: paused;
+}
+
+div:hover {
+    border-radius: 10%;
+    transition-duration: 0.5s;
+    cursor: help;
+    /*cursor: -webkit-grabbing;*/
+    /*cursor: wait;*/
+    /*cursor: progress;*/
+    /*cursor: none;*/
+    /*cursor: pointer;*/
+    /*cursor: not-allowed;*/
+    /*cursor: crosshair;*/
+}
